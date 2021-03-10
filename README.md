@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Compartilhando estados na aplicação com ContextAPI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aqui você vai aprender a como compartilhar dados entre os componentes da sua aplicação com ContextAPI, um recurso nativo do React, desde a versão 16.3.
 
 ## Available Scripts
 
