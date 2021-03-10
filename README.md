@@ -4,5 +4,5 @@ Aqui você vai aprender a como compartilhar dados entre os componentes da sua ap
 
 ## Goals do projeto
 
-[] Dados compartilhados sem a necessidade do uso de props
-[] Facilidade de gerenciar as ações da aplicação
+[ ] Dados compartilhados sem a necessidade do uso de props
+[ ] Facilidade de gerenciar as ações da aplicação
