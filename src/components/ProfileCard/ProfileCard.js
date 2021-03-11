@@ -31,10 +31,10 @@ const ProfileCard = () => {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Nome do dev
+            frontfabi
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Bio do dev
+            Keep being weird
           </Typography>
         </CardContent>
       </CardActionArea>

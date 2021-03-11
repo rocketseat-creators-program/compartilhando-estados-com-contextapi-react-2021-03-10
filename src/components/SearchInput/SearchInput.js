@@ -1,21 +1,18 @@
 /* eslint-disable no-use-before-define */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { getGithubUser, getGithubUserList } from '../../services'
-
+import { GithubContext } from '../../contexts'
 const SearchInput = () => {
-  const [userList, setUserList] = useState([])
+  const { getProfile, getUserList, selectedUser, userList} = useContext(GithubContext)
   const fetchData = (term) => {
     if(term.length >= 3) {
-      getGithubUserList(term)
-      .then(data => setUserList(data.data.items))
+      getUserList(term)
     }
   }
 
   const getUser = (userName) => {
-    getGithubUser(userName)
-    .then(data => console.log(data.data))
+    getProfile(userName)
   }
   return (
     <div className="SearchInput">
