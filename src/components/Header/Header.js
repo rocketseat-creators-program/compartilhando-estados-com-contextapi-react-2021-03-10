@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
@@ -10,6 +10,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import Tooltip from '@material-ui/core/Tooltip';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+
+import { GithubContext } from '../../contexts'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,6 +38,8 @@ const Header = ({ avatar, name, isAuthenticated }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  
 
   return (
     <AppBar position="static">

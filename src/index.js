@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GithubContextProvider } from './contexts'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GithubContextProvider>
+      <App />
+    </GithubContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
