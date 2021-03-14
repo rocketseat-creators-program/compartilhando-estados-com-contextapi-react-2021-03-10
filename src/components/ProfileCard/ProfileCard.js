@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+
+import { UserContext } from '../../contexts'
 
 const useStyles = makeStyles({
   root: {
@@ -20,30 +22,30 @@ const useStyles = makeStyles({
 
 const ProfileCard = () => {
   const classes = useStyles();
+  const { selectedUser } = useContext(UserContext)
+
+  const openURL = (url) => window.open(url)
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://avatars.githubusercontent.com/u/45862435?v=4"
-          title="Avatar do dev"
+          image={selectedUser.avatar_url}
+          title={`Avatar de ${selectedUser.name}`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            frontfabi
+            {`${selectedUser.name} - ${selectedUser.login}`}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            Keep being weird
+            {selectedUser.bio}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" onClick={() => openURL(selectedUser.html_url)} color="primary">
           Perfil
-        </Button>
-        <Button size="small" color="primary">
-          Repositórios
         </Button>
       </CardActions>
     </Card>

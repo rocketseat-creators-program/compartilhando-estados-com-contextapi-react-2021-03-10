@@ -2,18 +2,11 @@
 import { useState, useContext } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { GithubContext } from '../../contexts'
-const SearchInput = () => {
-  const { getProfile, getUserList, selectedUser, userList} = useContext(GithubContext)
-  const fetchData = (term) => {
-    if(term.length >= 3) {
-      getUserList(term)
-    }
-  }
+import { UserContext } from '../../contexts'
 
-  const getUser = (userName) => {
-    getProfile(userName)
-  }
+const SearchInput = () => {
+  const { userList, getUserList, selectUserProfile } = useContext(UserContext);
+  
   return (
     <div className="SearchInput">
       <Autocomplete
@@ -21,8 +14,8 @@ const SearchInput = () => {
         id="search-user"
         disableClearable
         style={{ width: '600px'}}
-        onSelect={e => fetchData(e.target.value)}
-        onChange={e => getUser(e.target.innerHTML)}
+        onSelect={e => getUserList(e.target.value)}
+        onChange={e => selectUserProfile(e.target.innerHTML)}
         options={userList.map((option) => option.login)}
         renderInput={(params) => (
           <TextField
