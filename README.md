@@ -1,11 +1,12 @@
-# Compartilhando estados na aplicação com ContextAPI
+<img src="https://storage.googleapis.com/golden-wind/experts-club/capa-github.svg" />
 
-Contém o projeto base para você acompanhar o vídeo com o tutorial que explica como 
-compartilhar estados na aplicação React com ContextAPI, que oficialmente existe no React desde a versão 16.3
+# Compartilhando estado entre componentes com ContextAPI
 
-## Goals do projeto
+Compartilhar estado no React já foi pesadelo para muitos e muitas devs!
+Assim, nesse video, nós vamos compartilhar estado entre componentes React, utilizando ContextAPI e ver como esta tarefa se torna bem mais simples!
 
-- Dados compartilhados sem a necessidade do uso de props
-- Facilidade de gerenciar as ações da aplicação
+## Expert
 
-
+| [<img src="https://avatars.githubusercontent.com/u/45862435?v=4" width="75px;"/>](https://github.com/frontfabi) |
+| :-------------------------------------------------------------------------------------------------------------: |
+|                                 [Fabi Rodrigues](https://github.com/frontfabi)                                  |
